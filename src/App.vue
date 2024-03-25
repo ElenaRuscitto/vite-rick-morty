@@ -7,6 +7,7 @@ import {store} from './data/store';
 
 
 export default {
+
     components: {
       Header,
       Main,
@@ -15,29 +16,30 @@ export default {
 
     data(){
       return {
-        axios,
         store
       }
     },
-    method:{
+    methods:{
       getApi(){
-        console.log(this.store);
-        axios.get(this.store.apiURL, {
-    
-          params: {
-       
-         
-          }
-        })
-        .then(result => {
-          console.log(result);
+        //console.log(this.store);
+        axios.get(this.store.apiURL)
+        .then(response => {
+          console.log(response.data.results);
+        
+          this.store.cardArray = response.data.results;
+     
         
         })
         .catch (error => {
           console.log(error);
         })
       }
+    },
+
+    mounted() {
+      this.getApi();
     }
+
   }
 
 </script>

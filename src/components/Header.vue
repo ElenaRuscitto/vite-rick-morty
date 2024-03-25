@@ -5,7 +5,7 @@
 
 <template>
   <div>
-    header
+    <h1 class="text-center my-4">- Rick&Morty - </h1>
   </div>
 </template>
 

@@ -48,7 +48,7 @@ export default {
 
 
 <template>
-  <Header />
+  <Header @startSearch="getApi" />
   <Main />
   <Footer />
 

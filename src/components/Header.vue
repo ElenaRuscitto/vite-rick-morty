@@ -1,24 +1,55 @@
 <script>
 import {store} from '../data/store';
+import axios from 'axios';
 export default {
   data(){
       return {
-        store
+        store,
+        name: ''
       }
-    }
+    },
+
+    methods: {
+      startSearch (){
+        console.log('ricercaaaaa');
+        this.$emit('startSearch')
+        axios.get(this.store.nameURL)
+        .then(response => {
+          console.log(response.name);
+        
+          this.store.nameArray = this.response.data.results.name;
+     
+        
+        })
+        // .catch (error => {
+        //   console.log(error);
+        // })
+      }
+    },
+    // mounted() {
+    //   this.startSearch()
+    // }
+
 }
 </script>
 
 
 <template>
   <div>
-    <h1 class="text-center my-4">- Rick&Morty - </h1>
+    <h1 class="text-center my-4"> - Rick&Morty - </h1>
 
     <div class="reserch d-flex justify-content-center my-5"> 
 
       <!-- <input type="text" class="form-control w-25 mx-3" placeholder="Search Character"> -->
     
-          <input class="form-control w-25 mx-3" list="datalistOptions" id="exampleDataList" placeholder="Search Character">
+          <input 
+            v-model.trim="name"
+            @keyup.enter="startSearch()"
+            class="form-control w-25 mx-3" 
+            list="datalistOptions" 
+            id="exampleDataList" 
+            placeholder="Search Character">
+
             <datalist id="datalistOptions">
               <option 
                 v-for="card in this.store.cardArray"

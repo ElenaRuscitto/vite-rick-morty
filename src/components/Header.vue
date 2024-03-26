@@ -1,11 +1,44 @@
 <script>
-
+import {store} from '../data/store';
+export default {
+  data(){
+      return {
+        store
+      }
+    }
+}
 </script>
 
 
 <template>
   <div>
     <h1 class="text-center my-4">- Rick&Morty - </h1>
+
+    <div class="reserch d-flex justify-content-center my-5"> 
+
+      <!-- <input type="text" class="form-control w-25 mx-3" placeholder="Search Character"> -->
+    
+          <input class="form-control w-25 mx-3" list="datalistOptions" id="exampleDataList" placeholder="Search Character">
+            <datalist id="datalistOptions">
+              <option 
+                v-for="card in this.store.cardArray"
+                :key="card.indice"
+                :value="card.name">
+            </option>
+            </datalist>
+
+        <select class="form-select w-25 mx-3" aria-label="Default select example">
+          <option selected> Select Status</option>
+          <option value="1">Alive</option>
+          <option value="2">Dead</option>
+          <option value="3">Unknown</option>
+        </select>
+
+      <button type="button" class="btn btn-info mx-3">Search</button>
+
+      <button type="button" class="btn btn-warning mx-3">Resect</button>
+
+    </div>
   </div>
 </template>
 

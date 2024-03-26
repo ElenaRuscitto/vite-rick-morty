@@ -58,13 +58,13 @@ export default {
           <option value="3">Unknown</option>
         </select>
 
-      <button type="button" class="btn btn-info mx-3">Search</button>
+      <button type="button" class="btn btn-info mx-3" @click="startSearch()">Search</button>
 
       <button type="button" class="btn btn-warning mx-3">Resect</button>
 
     </div>
 
-    <div class="text-center my-5">
+      <div class="text-center my-5">
         <p>Risultati trovati: {{ this.store.cardArray.length }} </p>
       </div>
 
@@ -75,5 +75,6 @@ export default {
 <style lang="scss" scoped>
 @use '../assets/scss/partials/general' as *;
 @use '../assets/scss/partials/variables' as *;
+
 
 </style>

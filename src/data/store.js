@@ -8,7 +8,7 @@ export const store = reactive ( {
   // per la ricerca dei nomi
   queryParams: {
     name: '',
-  },
+  }
 })
   
   

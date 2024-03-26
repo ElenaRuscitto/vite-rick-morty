@@ -22,7 +22,10 @@ export default {
     methods:{
       getApi(){
         //console.log(this.store);
-        axios.get(this.store.apiURL)
+        axios.get(this.store.apiURL, {
+          // queryparams per la ricerca nomi
+          params:this.store.queryParams
+        })
         .then(response => {
           console.log(response.data.results);
         
@@ -34,10 +37,12 @@ export default {
           console.log(error);
         })
       }
+
     },
 
     mounted() {
       this.getApi();
+
     }
 
   }

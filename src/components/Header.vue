@@ -11,25 +11,18 @@ export default {
 
     methods: {
       startSearch (){
+        this.store.queryParams= {
+          name: this.name
+        }
         console.log('ricercaaaaa');
         this.$emit('startSearch')
-        axios.get(this.store.nameURL)
-        .then(response => {
-          console.log(response.name);
-        
-          this.store.nameArray = this.response.data.results.name;
      
         
-        })
-        // .catch (error => {
-        //   console.log(error);
-        // })
+        }
+   
       }
-    },
-    // mounted() {
-    //   this.startSearch()
-    // }
-
+    
+  
 }
 </script>
 
@@ -53,7 +46,7 @@ export default {
             <datalist id="datalistOptions">
               <option 
                 v-for="card in this.store.cardArray"
-                :key="card.indice"
+                :key="card.id"
                 :value="card.name">
             </option>
             </datalist>
@@ -70,6 +63,11 @@ export default {
       <button type="button" class="btn btn-warning mx-3">Resect</button>
 
     </div>
+
+    <div class="text-center my-5">
+        <p>Risultati trovati: {{ this.store.cardArray.length }} </p>
+      </div>
+
   </div>
 </template>
 

@@ -13,8 +13,10 @@ export default {
     }
   },
   methods: {
-    changePage() {
-      store
+    changePage(isNext) {
+      isNext ? store.pageInfo.page++ : store.pageInfo.page--
+      this.$emit ('nextPage')
+
     }
   },
   
@@ -39,11 +41,11 @@ export default {
     </div>
 
     <div class="d-flex justify-content-center my-3">
-      <button type="button" class="btn btn-primary btn-sm"> &#60; </button>
+      <button @click="changePage(false)" v-if="store.pageInfo.page > 0 " type="button" class="btn btn-primary btn-sm"> &#60; </button>
 
         <span class="my-3">Pagina {{store.pageInfo.page + 1}} di {{store.pageInfo.pages }}</span>
 
-      <button type="button" class="btn btn-primary btn-sm"> &#62; </button>
+      <button @click="changePage(true)" v-if="store.pageInfo.page + 1 < store.pageInfo.pages" type="button" class="btn btn-primary btn-sm"> &#62; </button>
     </div>
 
   </div>
@@ -58,7 +60,7 @@ export default {
 .btn {
  background-color: rgb(131, 123, 165);
  border: none;
- margin: 5px;
+ margin: 15px;
  color: black;
  &:hover {
   background-color: rgb(116, 92, 223);

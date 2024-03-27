@@ -21,6 +21,8 @@ export default {
     },
     methods:{
       getApi(){
+        // svuoto array per poter caricare altri personaggi- ora non serve!!!!!
+        this.store.cardArray = [];
         //console.log(this.store);
         axios.get(this.store.apiURL, {
           // queryparams per la ricerca nomi
@@ -32,7 +34,7 @@ export default {
           this.store.cardArray = response.data.results;
           // associo pages
           this.store.pageInfo.pages = response.data.info.pages
-         
+          console.log(this.store.pageInfo.pages);
         
         })
         .catch (error => {
@@ -56,7 +58,7 @@ export default {
 
 <template>
   <Header @startSearch="getApi" />
-  <Main />
+  <Main @nextPage="getApi"/>
   <Footer />
 
 </template>

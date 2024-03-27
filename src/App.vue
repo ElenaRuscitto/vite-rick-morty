@@ -28,9 +28,11 @@ export default {
         })
         .then(response => {
           console.log(response.data.results);
-        
+          //  associo cardArray     
           this.store.cardArray = response.data.results;
-     
+          // associo pages
+          this.store.pageInfo.pages = response.data.info.pages
+         
         
         })
         .catch (error => {

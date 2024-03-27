@@ -8,6 +8,13 @@ export const store = reactive ( {
   // per la ricerca dei nomi
   queryParams: {
     name: '',
+  },
+
+  // per cambiare le pagine
+  pageInfo: {
+    page: 0,
+    pages: 0,
+ 
   }
 })
   

@@ -9,18 +9,18 @@ export default {
       }
     },
 
-    methods: {
-      startSearch (){
-        this.store.queryParams= {
-          name: this.name
-        }
-        console.log('ricercaaaaa');
-        this.$emit('startSearch')
-     
-        
-        }
-   
+  methods: {
+    startSearch (){
+      this.store.queryParams= {
+        name: this.name
       }
+      console.log('ricercaaaaa');
+      this.$emit('startSearch')
+    
+      
+    }
+  
+  }
     
   
 }

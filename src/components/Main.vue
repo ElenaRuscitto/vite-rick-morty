@@ -5,17 +5,20 @@ import Cards from './partials/Cards.vue';
 export default {
   components: {
    Cards,
-    },
+  },
   
-    data(){
-      return {
-        store,
-      }
-    },
-    methods: {
-      
+  data(){
+    return {
+      store,
     }
-  }
+  },
+  methods: {
+    changePage() {
+      store
+    }
+  },
+  
+}
 </script>
 
 
@@ -36,10 +39,13 @@ export default {
     </div>
 
     <div class="d-flex justify-content-center my-3">
-      <button type="button" class="btn btn-primary btn-sm"><<</button>
-        <span class="my-3">Pagina ... di ...</span>
-      <button type="button" class="btn btn-primary btn-sm">>></button>
+      <button type="button" class="btn btn-primary btn-sm"> &#60; </button>
+
+        <span class="my-3">Pagina {{store.pageInfo.page + 1}} di {{store.pageInfo.pages }}</span>
+
+      <button type="button" class="btn btn-primary btn-sm"> &#62; </button>
     </div>
+
   </div>
   
 </template>

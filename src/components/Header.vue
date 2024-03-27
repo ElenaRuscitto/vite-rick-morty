@@ -7,7 +7,7 @@ export default {
         store,
         name: ''
       }
-    },
+  },
 
   methods: {
     startSearch (){
@@ -16,10 +16,19 @@ export default {
       }
       console.log('ricercaaaaa');
       this.$emit('startSearch')
-    
-      
+      // reset campo input dopo aver fatto enter
+      this.name = ''
+    },
+
+    // reset card e pag
+    resetCard(){
+      this.store.queryParams= {
+        name: '',
+        page: 1,
+      }
+      this.$emit('resetCard')
     }
-  
+    
   }
     
   
@@ -58,9 +67,9 @@ export default {
           <option value="3">Unknown</option>
         </select>
 
-      <button type="button" class="btn btn-info mx-3" @click="startSearch()">Search</button>
+      <button @click="startSearch()" type="button" class="btn btn-info mx-3">Search</button>
 
-      <button type="button" class="btn btn-warning mx-3">Resect</button>
+      <button @click="resetCard()" type="button" class="btn btn-warning mx-3">Resect</button>
 
     </div>
 

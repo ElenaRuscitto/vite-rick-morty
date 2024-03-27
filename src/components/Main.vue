@@ -11,6 +11,9 @@ export default {
       return {
         store,
       }
+    },
+    methods: {
+      
     }
   }
 </script>
@@ -29,6 +32,13 @@ export default {
         :species="element.species"
         
         />
+        
+    </div>
+
+    <div class="d-flex justify-content-center my-3">
+      <button type="button" class="btn btn-primary btn-sm"><<</button>
+        <span class="my-3">Pagina ... di ...</span>
+      <button type="button" class="btn btn-primary btn-sm">>></button>
     </div>
   </div>
   
@@ -39,6 +49,14 @@ export default {
 @use '../assets/scss/partials/general' as *;
 @use '../assets/scss/partials/variables' as *;
 
-
+.btn {
+ background-color: rgb(131, 123, 165);
+ border: none;
+ margin: 5px;
+ color: black;
+ &:hover {
+  background-color: rgb(116, 92, 223);
+ }
+}
 
 </style>

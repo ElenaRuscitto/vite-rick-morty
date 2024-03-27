@@ -14,7 +14,9 @@ export default {
   },
   methods: {
     changePage(isNext) {
-      isNext ? store.pageInfo.page++ : store.pageInfo.page--
+      // se this.changePage è true incrementa, se false decrementa
+      isNext ? store.queryParams.page++ : store.queryParams.page--
+      console.log(store.queryParams);
       this.$emit ('nextPage')
 
     }
@@ -41,11 +43,11 @@ export default {
     </div>
 
     <div class="d-flex justify-content-center my-3">
-      <button @click="changePage(false)" v-if="store.pageInfo.page > 0 " type="button" class="btn btn-primary btn-sm"> &#60; </button>
+      <button @click="changePage(false)" v-if="store.queryParams.page > 0 " type="button" class="btn btn-primary btn-sm"> &#60; </button>
 
-        <span class="my-3">Pagina {{store.pageInfo.page + 1}} di {{store.pageInfo.pages }}</span>
+        <span class="my-3">Pagina {{store.queryParams.page }} di {{store.pageInfo.pages }}</span>
 
-      <button @click="changePage(true)" v-if="store.pageInfo.page + 1 < store.pageInfo.pages" type="button" class="btn btn-primary btn-sm"> &#62; </button>
+      <button @click="changePage(true)" v-if="store.queryParams.page + 1 < store.pageInfo.pages" type="button" class="btn btn-primary btn-sm"> &#62; </button>
     </div>
 
   </div>

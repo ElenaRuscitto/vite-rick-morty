@@ -14,8 +14,8 @@ export default {
 
 <template>
  <div class="col my-5 ">
-    <div class="card" style="width: 18rem;">
-      <img :src="image" class="card-img-top" :alt="name">
+    <div class="card rounded-top-circle" style="width: 18rem;">
+      <img :src="image" class="card-img-top rounded-circle" :alt="name">
       <div class="card-body">
         <h5 class="card-title">{{ name }}</h5>
         <p class="card-text">{{ status }}</p>

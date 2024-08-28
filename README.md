@@ -1,20 +1,11 @@
-# Vue 3 + Vite
-
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
-
 Esercizio di oggi: **Vite Rick & Morty **
 nome repo: vite-rick-morty
 
 **Descrizione:**
-Create un nuovo progetto utilizzando Vite e Vue 3 e definite i componenti necessari per strutturare il layout del tipo di quello visto in classe.
+Create un nuovo progetto utilizzando Vite e Vue 3 e definite i componenti necessari per strutturare il layout.
 Al caricamento della pagina, effettuate una chiama ajax all’API di Rick & Morty: https://rickandmortyapi.com/api/character e con i dati restituiti, stampate una card per ogni carta.
+nell’header o in un componente dedicato (es SearchBar.vue) mettere un campo di ricerca per nome. All’invio della ricerca verranno configurati i criteri di ricerca presenti nello store, generato un $emit che invocherà una nuova chiamata API in App.vue.
 
-Per i dati da stampare per ogni carta fare riferimento allo screenshot allegato
+Documentazione: https://rickandmortyapi.com/documentation
 
-Documentazione:
-https://rickandmortyapi.com/documentation
-PS: Il layout è libero
+

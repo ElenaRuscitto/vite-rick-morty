@@ -35,11 +35,11 @@ export default {
       
       <Cards v-for="element in store.cardArray" 
         :key="element.id"
-        :image="element.image"
+        
         :name="element.name"
         :status="element.status"
         :species="element.species"
-        
+        :image="element.image"
         />
         
     </div>

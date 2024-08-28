@@ -60,12 +60,12 @@ export default {
             </option>
             </datalist>
 
-        <select class="form-select w-25 mx-3" aria-label="Default select example">
+        <!-- <select class="form-select w-25 mx-3" aria-label="Default select example">
           <option selected> Select Status</option>
           <option value="1">Alive</option>
           <option value="2">Dead</option>
           <option value="3">Unknown</option>
-        </select>
+        </select> -->
 
       <button @click="startSearch()" type="button" class="btn btn-info mx-3">Search</button>
 

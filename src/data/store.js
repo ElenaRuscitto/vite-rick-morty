@@ -11,7 +11,7 @@ export const store = reactive ( {
     page: 1,
   },
 
-  // per cambiare le pagine
+  // per cambiare le pagine (page=contatore, pages=pag tot.)
   pageInfo: {
    
     pages: 0,
